@@ -1,12 +1,11 @@
 # Recording
-```txt
-pojo: 只有属性,getter / setter,就是个普通对象
-Entity: 和数据库表一一对应
-DTO: Data Transfer Object, 传数据
-VO: 给前端展示用
 
-controller: 接 HTTP 请求,返回响应,用 DTO 接参数
-service: 业务
-mapper: 写数据库的CRUD
-```
+### day-1
+- pojo: 只有属性,getter / setter,就是个普通对象
+- Entity: 和数据库表一一对应
+- DTO: Data Transfer Object, 传数据
+- VO: 给前端展示用
+- controller: 接 HTTP 请求,返回响应,用 DTO 接参数
+- service: 业务
+- mapper: 写数据库的CRUD
 ![img.png](img.png)
