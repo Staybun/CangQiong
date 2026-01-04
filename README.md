@@ -22,3 +22,10 @@ config（各种 Bean 配置）
 - MD5: 哈希算法，把任意长度的数据 → 固定长度的指纹，即32位字符串，不可逆
 > 123456  MD5—>  e10adc3949ba59abbe56e057f20f883e
 > > 已被淘汰，加密程度不够
+- TODO: 标记未完成的事
+- FIXME： 有bug，需要修复
+- NOTE： 记录一些笔记，刻意说明
+- YApi: 接口管理
+- Knife4j：接口文档
+- Swagger：接口文档
+- apifox：推荐使用，本人所用，替代swagger
