@@ -9,3 +9,13 @@
 - service: 业务
 - mapper: 写数据库的CRUD
 ![img.png](img.png)
+
+```txt
+开发：application-dev.yml（本地数据库）
+测试：application-test.yml（测试库）
+线上：application-prod.yml（线上库）
+
+interceptor（拦截器）
+handler（全局异常）
+config（各种 Bean 配置）
+```
