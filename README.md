@@ -1,5 +1,5 @@
 # Recording
-
+## tag 即为 dayN 的文件目录
 ### day-1
 - pojo: 只有属性,getter / setter,就是个普通对象
 - Entity: 和数据库表一一对应
