@@ -3,7 +3,7 @@
 ### day-1
 - pojo: 只有属性,getter / setter,就是个普通对象
 - Entity: 和数据库表一一对应
-- DTO: Data Transfer Object, 传数据
+- DTO: Data Transfer Object, 前端传过来的数据
 - VO: 给前端展示用
 - controller: 接 HTTP 请求,返回响应,用 DTO 接参数
 - service: 业务
@@ -29,3 +29,15 @@ config（各种 Bean 配置）
 - Knife4j：接口文档
 - Swagger：接口文档
 - apifox：推荐使用，本人所用，替代swagger
+
+### day-2
+- Controller层：浏览器/前端发请求过来，Controller负责接受并调用Service处理，最后把结果打包为Result返回给前端
+
+```java
+@RestController: REST接口控制器，返回值会直接写到 HTTP 响应体里，默认为json
+@RequestMapping("/admin/employee")：给此Controller统一加前缀路径
+@Slf4j： Lombok自动生成log对象
+@Autowired： 依赖注入DI
+@PostMapping("/login")：POST请求接口
+@RequestBody: 把前端发来的 JSON请求体 自动解析成 Java 对象
+```
