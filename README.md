@@ -32,7 +32,7 @@ config（各种 Bean 配置）
 
 ### day-2
 - Controller层：浏览器/前端发请求过来，Controller负责接受并调用Service处理，最后把结果打包为Result返回给前端
-
+- ThreadLocal: 每次请求是一个线程，ThreadLocal保证每个线程有自己独立的数据副本，不会冲突，请求结束后需要remove，否则会内存泄漏（黑马未操作）
 ```java
 @RestController: REST接口控制器，返回值会直接写到 HTTP 响应体里，默认为json
 @RequestMapping("/admin/employee")：给此Controller统一加前缀路径
@@ -40,4 +40,12 @@ config（各种 Bean 配置）
 @Autowired： 依赖注入DI
 @PostMapping("/login")：POST请求接口
 @RequestBody: 把前端发来的 JSON请求体 自动解析成 Java 对象
+@Data:  Lombok自动生成getter/setter/toString/equals/hashCode
+@AllArgsConstructor: 全参构造
+@NoArgsConstructor：无参构造
+```
+```mysql
+<where>： 动态SQL，满足条件才拼接SQL
+like + % : 模糊查询
+order by xxx desc/asc: 降序/升序
 ```
