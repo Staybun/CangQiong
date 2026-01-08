@@ -75,3 +75,8 @@ order by xxx desc/asc: 降序/升序
 @Component: spring管理
 @Aspect： 切面类
 ```
+- 空指针：访问对象属性时，对象为null
+- 反射（Reflection）：程序在运行时，查看和操作“类本身”的能力
+  - Method 类： 方法的描述对象，能调用这个方法
+  - invoke(谁, 用什么参数)： 调用方法，
+- 方法签名（MethodSignature）：对“一个方法”的完整描述对象，包括方法名 参数类型 返回值 注解
