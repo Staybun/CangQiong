@@ -53,3 +53,25 @@ like + % : 模糊查询
 order by xxx desc/asc: 降序/升序
 <set>: 自动加 SET 关键字,处理逗号
 ```
+
+### day-3
+- AOP
+  - 切面（Aspect）：把“横着切进去的逻辑”集中写在一个类里
+  - 切入点（Pointcut）：切入点 = 我要拦截哪些方法
+    - execution(...) —— 匹配方法签名
+    > * com.sky.mapper.*.*(..)  execution(返回值 包名.类名.方法名(参数))
+    > * 拦截 com.sky.mapper 包下，任意类、任意方法、任意参数的方法
+  - 通知（Advice）: 在什么时机执行切面逻辑
+  > @Before：之前
+  > @After：之后（不管成功失败）
+  > @AfterReturning：成功后
+  > @AfterThrowing：异常后
+  > @Around：前后都包
+  - JoinPoint: 包含： 被拦的方法名,方法参数,目标对象,方法签名
+
+```java
+@Target(ElementType.METHOD): 自定义注解 @AutoFill 只能贴在“方法”上
+@Retention(RetentionPolicy.RUNTIME):这个注解会“保留到运行时”，程序运行时能通过反射读到它
+@Component: spring管理
+@Aspect： 切面类
+```
