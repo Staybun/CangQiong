@@ -39,13 +39,17 @@ config（各种 Bean 配置）
 @Slf4j： Lombok自动生成log对象
 @Autowired： 依赖注入DI
 @PostMapping("/login")：POST请求接口
-@RequestBody: 把前端发来的 JSON请求体 自动解析成 Java 对象
+@RequestBody: 把前端发来的 JSON请求体 自动解析成 Java 对象, 常见是 POST / PUT
 @Data:  Lombok自动生成getter/setter/toString/equals/hashCode
 @AllArgsConstructor: 全参构造
 @NoArgsConstructor：无参构造
+@PathVariable: 获取url的路径参数
+@bulider: 链式编程
+@PathVariable: 获取url的路径参数,常见是 GET / DELETE
 ```
 ```mysql
 <where>： 动态SQL，满足条件才拼接SQL
 like + % : 模糊查询
 order by xxx desc/asc: 降序/升序
+<set>: 自动加 SET 关键字,处理逗号
 ```

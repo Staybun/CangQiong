@@ -27,4 +27,12 @@ public interface EmployeeMapper {
     void insert(Employee employee);
 
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+     *  根据id修改员工账号状态
+     * @param employee
+     */
+    void update(Employee employee);
+
+    Employee getById(Long id);
 }
