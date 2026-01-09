@@ -52,6 +52,10 @@ config（各种 Bean 配置）
 like + % : 模糊查询
 order by xxx desc/asc: 降序/升序
 <set>: 自动加 SET 关键字,处理逗号
+<foreach>: 遍历集合
+    collection="list"，集合名字参数
+    item="dishFlavor"，集合元素名字参数
+    separator=","，集合元素之间用逗号拼接
 ```
 
 ### day-3
@@ -74,9 +78,14 @@ order by xxx desc/asc: 降序/升序
 @Retention(RetentionPolicy.RUNTIME):这个注解会“保留到运行时”，程序运行时能通过反射读到它
 @Component: spring管理
 @Aspect： 切面类
+@Transactional: 事务
 ```
 - 空指针：访问对象属性时，对象为null
 - 反射（Reflection）：程序在运行时，查看和操作“类本身”的能力
   - Method 类： 方法的描述对象，能调用这个方法
   - invoke(谁, 用什么参数)： 调用方法，
 - 方法签名（MethodSignature）：对“一个方法”的完整描述对象，包括方法名 参数类型 返回值 注解
+
+- 部署： 把程序/服务放到一台【别人也能访问的服务器】上运行
+- OSS： 对象存储（Object Storage），存文件，并给一个公网可访问的 URL
+  - Bucket = OSS 里的一个“存储空间 / 文件桶”
