@@ -8,7 +8,6 @@
 - controller: 接 HTTP 请求,返回响应,用 DTO 接参数
 - service: 业务
 - mapper: 写数据库的CRUD
-![img.png](img.png)
 
 ```txt
 开发：application-dev.yml（本地数据库）
