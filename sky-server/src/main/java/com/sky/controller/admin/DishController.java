@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.sky.result.Result;
 
+import java.util.List;
+
 /**
  * 菜品管理
  */
@@ -43,5 +45,17 @@ public class DishController {
         log.info("菜品分页查询:{}", dishPageQueryDTO);
         PageResult pageResult = dishService.pageQuery(dishPageQueryDTO);
         return Result.success(pageResult);
+    }
+
+    /**
+     * 批量删除菜品
+     * @param ids
+     * @return
+     */
+    @DeleteMapping
+    public Result delete(@RequestParam List<Long> ids){
+        log.info("删除菜品，id为：{}", ids);
+        dishService.deleteBatch(ids);
+        return Result.success();
     }
 }

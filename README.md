@@ -43,7 +43,6 @@ config（各种 Bean 配置）
 @Data:  Lombok自动生成getter/setter/toString/equals/hashCode
 @AllArgsConstructor: 全参构造
 @NoArgsConstructor：无参构造
-@PathVariable: 获取url的路径参数
 @bulider: 链式编程
 @PathVariable: 获取url的路径参数,常见是 GET / DELETE
 ```
@@ -79,6 +78,7 @@ order by xxx desc/asc: 降序/升序
 @Component: spring管理
 @Aspect： 切面类
 @Transactional: 事务
+@RequestParam: 从 URL 的查询参数里拿值
 ```
 - 空指针：访问对象属性时，对象为null
 - 反射（Reflection）：程序在运行时，查看和操作“类本身”的能力
