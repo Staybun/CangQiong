@@ -89,3 +89,8 @@ order by xxx desc/asc: 降序/升序
 - 部署： 把程序/服务放到一台【别人也能访问的服务器】上运行
 - OSS： 对象存储（Object Storage），存文件，并给一个公网可访问的 URL
   - Bucket = OSS 里的一个“存储空间 / 文件桶”
+
+### day-4 (作业形式)
+
+
+### day-5
