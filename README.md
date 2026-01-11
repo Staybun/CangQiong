@@ -32,6 +32,8 @@ config（各种 Bean 配置）
 ### day-2
 - Controller层：浏览器/前端发请求过来，Controller负责接受并调用Service处理，最后把结果打包为Result返回给前端
 - ThreadLocal: 每次请求是一个线程，ThreadLocal保证每个线程有自己独立的数据副本，不会冲突，请求结束后需要remove，否则会内存泄漏（黑马未操作）
+- Result 不带泛型：只返回“状态+提示”（没有 data）
+- Result<T> 带泛型：要返回“数据 data”，T 就是 data 的类型
 ```java
 @RestController: REST接口控制器，返回值会直接写到 HTTP 响应体里，默认为json
 @RequestMapping("/admin/employee")：给此Controller统一加前缀路径
@@ -89,7 +91,17 @@ order by xxx desc/asc: 降序/升序
 - OSS： 对象存储（Object Storage），存文件，并给一个公网可访问的 URL
   - Bucket = OSS 里的一个“存储空间 / 文件桶”
 
-### day-4 (作业形式)
-
+### day-4 (作业)
 
 ### day-5
+- Spring Data Redis
+  - RedisTemplate: 操作 Redis 的模板类
+  - .opsForXXX().XXX  操作redis数据类型的方法函数
+  - 序列化与反序列化配置
+- final 关键词： 创建对象时，不允许被修改，常量标准写法
+```java
+@Configuration: 配置类, 配置类里可以写 @Bean , 用来向Spring容器中注册对象
+@SpringBootTest: 单元测试
+```
+
+### day-6
