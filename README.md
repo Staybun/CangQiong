@@ -105,3 +105,8 @@ order by xxx desc/asc: 降序/升序
 ```
 
 ### day-6
+- HttpClient = 让 Java 后端，像 Postman/浏览器一样去访问别人的接口
+    - 调第三方接口
+    - 微服务互调
+    - 后台定时任务
+- 创建客户端,创建请求对象,execute 发送,读状态码 & 读响应体
