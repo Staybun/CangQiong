@@ -110,3 +110,10 @@ order by xxx desc/asc: 降序/升序
     - 微服务互调
     - 后台定时任务
 - 创建客户端,创建请求对象,execute 发送,读状态码 & 读响应体
+- 微信小程序
+    - code: 临时票据
+    - appid/appsecret 
+    - openid: 用户在小程序下的唯一编号
+    - session_key: 微信给的会话密钥
+    - token: 用户信息,给小程序后续访问用
+    - storage: 小程序本地仓库
