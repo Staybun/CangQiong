@@ -92,7 +92,7 @@ order by xxx desc/asc: 降序/升序
   - Bucket = OSS 里的一个“存储空间 / 文件桶”
 
 ### day-4 (作业)
-
+- 套餐模块： 添加、修改、查询、批量删除、分页查询
 ### day-5
 - Spring Data Redis
   - RedisTemplate: 操作 Redis 的模板类

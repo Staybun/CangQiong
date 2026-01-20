@@ -28,10 +28,10 @@
             <if test="status != null">
                 status = #{status},
             </if>
-            <if test="updateUser != null">
+            <if test="updateTime != null">
                 update_time = #{updateTime},
             </if>
-            <if test="updateUser  != null">
+            <if test="updateUser != null">
                 update_user  = #{updateUser},
             </if>
         </set>
@@ -60,4 +60,17 @@
     <select id="getByID" resultType="com.sky.entity.Dish">
         select * from dish where id = #{id}
     </select>
+    <select id="list" resultType="com.sky.entity.Dish">
+        select * from dish
+        <where>
+            <if test="categoryId != null">
+                and category_id = #{categoryId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+        order by create_time desc
+    </select>
+
 </mapper>
