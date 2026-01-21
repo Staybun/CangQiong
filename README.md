@@ -119,3 +119,16 @@ order by xxx desc/asc: 降序/升序
     - storage: 小程序本地仓库
 
 ### day-7
+- 缓存：把数据存到redis里，减轻数据库压力
+- SpringCache 缓存框架
+  - SpringEL（SpEL）= Spring Expression Language： 语法
+  - value：缓存命名空间，不是 Redis 的 key，而是 key 的前缀空间
+  - key：缓存的唯一标识，#参数名 = 方法参数
+```java
+// 启动类加，启动时自动注册缓存管理器
+@EnableCaching
+// 先查缓存,有直接返回，没有就存入缓存，查询接口
+@Cacheable(value="xxxCache", key="#xxx")
+// 改数据后删除缓存，全删和精致删除，写接口（新增/修改/删除/状态变化）
+@CacheEvict(value="setmealCache", allEntries=true/key = "#setmealDTO.categoryId")
+```
