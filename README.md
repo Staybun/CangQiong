@@ -117,3 +117,5 @@ order by xxx desc/asc: 降序/升序
     - session_key: 微信给的会话密钥
     - token: 用户信息,给小程序后续访问用
     - storage: 小程序本地仓库
+
+### day-7
