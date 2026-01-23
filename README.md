@@ -132,3 +132,9 @@ order by xxx desc/asc: 降序/升序
 // 改数据后删除缓存，全删和精致删除，写接口（新增/修改/删除/状态变化）
 @CacheEvict(value="setmealCache", allEntries=true/key = "#setmealDTO.categoryId")
 ```
+
+### day-8
+- 微信支付：需要商家认证才能开通,个人开发者可以模拟支付的流程,完成后续项目的学习
+  > 参考CSDN苍穹外卖模拟微信支付,或参考tag v1.6 来修改代码
+
+### day-9 (作业)
