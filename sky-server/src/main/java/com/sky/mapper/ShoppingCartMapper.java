@@ -9,25 +9,25 @@ import java.util.List;
 public interface ShoppingCartMapper {
     /**
      * 插入购物车数据
-     * @param shoppingCart
+     * @param cart
      */
     List<ShoppingCart> list(ShoppingCart cart);
 
     /**
      * 插入购物车数据
-     * @param shoppingCart
+     * @param cart
      */
     void updateNumberById(ShoppingCart cart);
 
     /**
      * 插入购物车数据
-     * @param shoppingCart
+     * @param cart
      */
     void insert(ShoppingCart cart);
 
     /**
      * 根据用户id删除购物车数据
-     * @param userId
+     * @param currentId
      */
     void deleteByUserId(Long currentId);
 
@@ -36,4 +36,10 @@ public interface ShoppingCartMapper {
      * @param id
      */
     void deleteById(Long id);
+
+    /**
+     * 批量插入购物车数据
+     * @param shoppingCartList
+     */
+    void insertBatch(List<ShoppingCart> shoppingCartList);
 }
