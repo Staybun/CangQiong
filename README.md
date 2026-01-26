@@ -155,4 +155,11 @@ LocalDateTime.now()  // 当前时间
   - @Scheduled(cron = "0 0 1 * * ?")  每天凌晨1点执行
   - 其余可直接让AI生成表达式
 
-- WebSocket：
+- WebSocket：服务器可以主动给客户端推送消息的通信方式
+  - 长连接 · 实时 · 双向
+```java
+@ServerEndpoint("/ws/{sid}")  // WebSocket 的服务器端
+@OnOpen
+@OnClose
+@OnMessage      // 客户端主动发消息
+```
