@@ -141,3 +141,18 @@ order by xxx desc/asc: 降序/升序
 - 百度地图API
   - 服务端：在后端发HTTP请求时候选用
   - 浏览器端：在前端直接引入百度地图JS选用
+### day-10
+- Spring Task: 定时任务
+```java
+@EnableScheduling   // 启动类
+@Scheduled(cron="0 0 1 * * ?")  // cron表达式
+LocalDateTime.now()  // 当前时间
+.plusMinutes(x)  //在当前时间上加x分钟，x可正可负
+```
+- cron表达式： 从左到右，分别代表：秒 分 时 日 月 星期 年
+  - @Scheduled(cron = "0 * * * * ?")  每 1 分钟执行
+  - @Scheduled(cron = "0 */5 * * * ?") 每 5 分钟执行
+  - @Scheduled(cron = "0 0 1 * * ?")  每天凌晨1点执行
+  - 其余可直接让AI生成表达式
+
+- WebSocket：
