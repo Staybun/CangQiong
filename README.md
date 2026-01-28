@@ -169,3 +169,104 @@ LocalDateTime.now()  // 当前时间
 
 ### day-12
 - Apache POI : Apache 提供的一个 Java 开源库，用于在 Java 程序中读写 Microsoft Office 文件,常用于 Excel 文件的导入与导出
+
+### day-13 技术栈复盘
+
+#### Nginx
+
+- **负载均衡**： 本质是用调度算法，把请求平均或合理分发到多个后端实例，避免单点瓶颈。
+- **upstream：后端服务池**
+- **调度算法**
+  - 轮询，权重，ip_hash（同一用户总打到一台服务器）
+
+- **正向代理：客户端主动通过代理访问外部资源，代理隐藏的是客户端**
+- **反向代理： 解决跨域，客户端不知道真实后端服务器的存在，只和代理服务器通信，代理隐藏的是服务端**
+
+#### MD5
+
+- 密码加密，或者称为哈希/摘要，解决**数据库明文存密码**的问题
+
+- 固定长度不可逆
+
+#### Swagger
+
+- 接口文档框架，此项目用**Apifox**代替
+
+#### JWT（JSON Web Token）
+
+- 服务器不存登录态，登录后发放token，之后带着token进
+- 安全：密钥+exp过期
+- 场景: 身份验证，授权
+
+#### Interceptor（拦截器）
+
+- **preHandle**：决定放不放行
+- **afterCompletion**：收尾清理
+
+#### ThreadLocal
+
+- 为什么要用？
+  - 在一次请求的同一个线程里，让所有代码都能拿到同一份上下文数据，而不用层层传参
+
+- 怎么用？
+  - set：拦截器里放
+  - get：业务代码拿
+  - remove：请求结束时清理，防止内存泄漏
+
+- 场景：自动填充公共字段，统一获取当前登录用户
+
+  ```txt
+  请求进来
+  → 拦截器解析 JWT
+  → BaseContext.setCurrentId(empId)
+  → Controller / Service / AOP
+     BaseContext.getCurrentId()
+  → 请求结束
+  → BaseContext.removeCurrentId()
+  ```
+
+####  JWT + Interceptor + ThreadLocal
+
+```
+1.前端登录成功拿到 token
+2.之后每次请求都带 token
+3.拦截器 preHandle 校验 token
+4.校验通过解析出 id → BaseContext(ThreadLocal)
+5.业务/AOP 需要当前用户时直接 get
+6.afterCompletion remove，避免线程复用串号
+```
+
+#### 全局异常处理器
+
+- 用于统一捕获系统中抛出的异常，并将其转换为标准化的响应结果，从而避免在各个 Controller 中重复 try-catch，使业务逻辑与异常处理解耦。
+
+#### HttpClient
+
+- 后端用于发起 HTTP 请求的工具，常用于调用第三方接口或其他服务，通常在 Service 层通过工具类封装使用
+
+- 常封装为`doGet / doPos`
+
+#### Spring Cache
+
+- Spring 提供的一套**缓存抽象层**
+- 本质是 AOP：在方法调用前后织入“读缓存/写缓存/删缓存”的逻辑
+
+#### Spring Task
+
+- 按固定规则定时执行方法
+
+-  cron 表达式
+
+#### Transactional
+
+- 事务的本质：要么全成功，要么全失败, **这个特性就是原子性**
+
+#### OSS
+
+- 对象存储服务: 存文件的“云硬盘”，通过 HTTP 访问
+
+#### Websocket
+
+- 是一种长连接的通信协议，用来实现服务端主动向客户端实时推送消息
+
+- **axios** 是“客户端主动发请求、服务器被动响应”
